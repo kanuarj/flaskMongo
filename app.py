@@ -30,7 +30,7 @@ def postData():
     name = request.json['name']
     genre = request.json['genre']
     game = request.json['game']
-    currentCollection.insert({'name' : name, 'favGenre' : genre, 'favGame' : game})
+    currentCollection.insert_one({'name' : name, 'favGenre' : genre, 'favGame' : game})
     return jsonify({'name' : name, 'genre' : genre, 'game' : game})
 
 @app.route('/deleteData/<name>', methods = ['DELETE'])
